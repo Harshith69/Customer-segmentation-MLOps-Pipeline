@@ -1,0 +1,40 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+cs-env/
+venv/
+.env
+
+# Credentials
+credentials/
+*.env
+
+# Git
+.git/
+.gitignore
+
+# Logs
+artifacts/logs/
+*.log
+
+# Notebooks
+notebooks/
+
+# Data files (large)
+data/
+*.csv
+*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Tests
+tests/
+
+# MLflow local artifacts
+mlruns/
