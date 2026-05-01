@@ -1,0 +1,36 @@
+[ 2026-05-01 20:05:49,524 ] INFO - MLOpsPipeline - Pipeline started
+[ 2026-05-01 20:05:49,527 ] INFO - MLOpsPipeline - Configuration loaded successfully
+[ 2026-05-01 20:05:49,527 ] INFO - MLOpsPipeline - Loaded config: {'artifacts_root': 'artifacts', 'data_ingestion': {'collection_name': 'customer_data', 'database_name': 'customer_db'}, 'data_transformation': {'log_transform_columns': ['recency', 'frequency', 'monetary']}, 'model_training': {'n_clusters': 2, 'random_state': 42}, 'mlflow': {'experiment_name': 'customer_segmentation', 'tracking_uri': 'https://dagshub.com/harshithnchandan/Customer-segmentation-MLOps-Pipeline.mlflow', 'registered_model_name': 'customer_segmentation_model'}}
+[ 2026-05-01 20:05:49,528 ] INFO - MLOpsPipeline - Pipeline completed
+[ 2026-05-01 20:05:53,606 ] INFO - MLOpsPipeline - Pipeline execution started
+[ 2026-05-01 20:05:53,609 ] INFO - MLOpsPipeline - Configuration loaded successfully
+[ 2026-05-01 20:05:53,609 ] INFO - MLOpsPipeline - Starting data ingestion
+[ 2026-05-01 20:05:53,610 ] INFO - MLOpsPipeline - MongoLoader initialized
+[ 2026-05-01 20:05:54,624 ] INFO - MLOpsPipeline - Fetched 5000 records from MongoDB
+[ 2026-05-01 20:05:54,663 ] INFO - MLOpsPipeline - Data saved at artifacts\raw\raw_data.csv
+[ 2026-05-01 20:05:54,669 ] INFO - MLOpsPipeline - Starting data validation
+[ 2026-05-01 20:05:54,704 ] INFO - MLOpsPipeline - Column validation passed
+[ 2026-05-01 20:05:54,704 ] INFO - MLOpsPipeline - Dtype validation passed
+[ 2026-05-01 20:05:54,721 ] INFO - MLOpsPipeline - order_date converted successfully
+[ 2026-05-01 20:05:54,722 ] WARNING - MLOpsPipeline - Revenue mismatch detected (possible data issue)
+[ 2026-05-01 20:05:54,726 ] INFO - MLOpsPipeline - Data validation passed
+[ 2026-05-01 20:05:54,726 ] INFO - MLOpsPipeline - Starting data transformation
+[ 2026-05-01 20:05:54,736 ] INFO - MLOpsPipeline - Starting data cleaning
+[ 2026-05-01 20:05:54,753 ] INFO - MLOpsPipeline - Data cleaned. Remaining rows: 5000
+[ 2026-05-01 20:05:54,754 ] INFO - MLOpsPipeline - Starting feature engineering
+[ 2026-05-01 20:05:54,843 ] INFO - MLOpsPipeline - Feature engineering completed
+[ 2026-05-01 20:05:54,844 ] INFO - MLOpsPipeline - Starting feature transformation
+[ 2026-05-01 20:05:54,849 ] INFO - MLOpsPipeline - Feature transformation completed
+[ 2026-05-01 20:05:54,861 ] INFO - MLOpsPipeline - Processed data saved at artifacts\processed\processed_data.csv
+[ 2026-05-01 20:05:54,861 ] INFO - MLOpsPipeline - Processed data available at: artifacts\processed\processed_data.csv
+[ 2026-05-01 20:05:54,861 ] INFO - MLOpsPipeline - Pipeline execution completed
+[ 2026-05-01 20:05:56,670 ] INFO - MLOpsPipeline - Starting model training
+[ 2026-05-01 20:05:58,437 ] INFO - MLOpsPipeline - Starting model evaluation
+[ 2026-05-01 20:05:58,476 ] INFO - MLOpsPipeline - Silhouette Score: 0.27053370841074353
+[ 2026-05-01 20:05:58,476 ] INFO - MLOpsPipeline - Davies-Bouldin Score: 1.5529093127630844
+[ 2026-05-01 20:05:58,477 ] INFO - MLOpsPipeline - Calinski-Harabasz Score: 350.43926353516645
+[ 2026-05-01 20:06:16,817 ] INFO - MLOpsPipeline - Model logged and registered successfully
+[ 2026-05-01 20:06:18,385 ] INFO - MLOpsPipeline - Model saved at artifacts\models\kmeans_model.pkl
+[ 2026-05-01 20:06:18,385 ] INFO - MLOpsPipeline - Model stored at: artifacts\models\kmeans_model.pkl
+[ 2026-05-01 20:06:18,386 ] INFO - MLOpsPipeline - Metrics: {'silhouette_score': 0.27053370841074353, 'davies_bouldin_score': 1.5529093127630844, 'calinski_harabasz_score': 350.43926353516645}
+[ 2026-05-01 20:06:18,386 ] INFO - MLOpsPipeline - MLflow run_id: None

@@ -1,0 +1,20 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  collection_name: customer_data
+  database_name: customer_db
+
+data_transformation:
+  log_transform_columns:
+    - recency
+    - frequency
+    - monetary
+
+model_training:
+  n_clusters: 2 #is just a starting baseline, not final
+  random_state: 42
+
+mlflow:
+  experiment_name: customer_segmentation
+  tracking_uri: https://dagshub.com/harshithnchandan/Customer-segmentation-MLOps-Pipeline.mlflow
+  registered_model_name: customer_segmentation_model

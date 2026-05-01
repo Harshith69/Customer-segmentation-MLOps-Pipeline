@@ -1,0 +1,35 @@
+columns:
+  order_id: object
+  order_date: object
+  customer_id: int
+  product_category: object
+  region: object
+  quantity: int
+  unit_price: float
+  discount: float
+  payment_method: object
+  delivery_days: int
+  customer_rating: float
+  revenue: float
+
+required_columns:
+  - order_id
+  - order_date
+  - customer_id
+  - quantity
+  - unit_price
+  - revenue
+
+numerical_columns:
+  - quantity
+  - unit_price
+  - discount
+  - delivery_days
+  - customer_rating
+  - revenue
+
+categorical_columns:
+  - order_id
+  - product_category
+  - region
+  - payment_method
